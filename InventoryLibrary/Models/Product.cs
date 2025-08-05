@@ -1,4 +1,4 @@
-﻿namespace FoothillOOPTask.Models;
+﻿namespace InventoryLibrary.Models;
 
 public class Product
 {
