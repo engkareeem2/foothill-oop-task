@@ -66,6 +66,34 @@ public class UserInterface
         
         Inventory.EditProduct(name, newName, newPrice, newQuantity);
     }
+
+    public static void HandleDeleteProduct()
+    {
+        String name = ConsoleUtils.ReadConsole("Enter the product's name: ", null);
+        Product? product = Inventory.Search(name);
+
+        if (product == null)
+        {
+            Console.WriteLine("The product not found!");
+            return;
+        }
+
+        Console.WriteLine("--------------------------------");
+        product.Print();
+        Console.WriteLine("--------------------------------");
+
+        String confirmation = ConsoleUtils.ReadConsole("Write 'yes' if you are sure (default no): ", "no");
+        
+        if (confirmation == "yes")
+        {
+            Inventory.RemoveProduct(product);
+            Console.WriteLine("Product deleted successfully!");
+        }
+        else
+        {
+            Console.WriteLine("Operation aborted.");
+        }
+    }
     
     public static void HandleSearchProduct()
     {

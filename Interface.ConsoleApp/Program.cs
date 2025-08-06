@@ -1,6 +1,4 @@
-﻿using System.Text;
-using FoothillOOPTask.Utility;
-using InventoryLibrary.Models;
+﻿using FoothillOOPTask.Utility;
 
 while (true)
 {
@@ -17,6 +15,9 @@ while (true)
             break;
         case 3:
             UserInterface.HandleEditProduct();
+            break;
+        case 4:
+            UserInterface.HandleDeleteProduct();
             break;
         case 5:
             UserInterface.HandleSearchProduct();
