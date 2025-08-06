@@ -31,6 +31,10 @@ public class Inventory
         {
             Console.WriteLine("Empty.");
         }
-        
+    }
+
+    public static Product? Search(String name)
+    {
+        return _products.Find(product => product.Name == name);
     }
 }

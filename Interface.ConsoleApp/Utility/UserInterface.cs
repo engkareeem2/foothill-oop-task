@@ -46,4 +46,19 @@ public class UserInterface
         Inventory.ViewAllProducts();
         Console.WriteLine("--------------------------------");
     }
+
+    public static void HandleSearchProduct()
+    {
+        String name = ConsoleUtils.ReadConsole("Enter the product's name: ", null);
+        Product? product = Inventory.Search(name);
+
+        if (product != null)
+        {
+            product.Print();
+        }
+        else
+        {
+            Console.WriteLine("Product not found!");
+        }
+    }
 }

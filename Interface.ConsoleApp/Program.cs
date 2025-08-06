@@ -15,6 +15,9 @@ while (true)
         case 2:
             UserInterface.HandleViewAllProducts();
             break;
+        case 5:
+            UserInterface.HandleSearchProduct();
+            break;
         default:
             Console.WriteLine("Invalid option!");
             break;
