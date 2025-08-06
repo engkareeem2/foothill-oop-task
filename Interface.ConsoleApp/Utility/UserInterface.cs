@@ -25,7 +25,7 @@ public class UserInterface
         }
 
         decimal price = ConsoleUtils.ReadDecimal("Enter price: ", null, true);
-        int quantity = ConsoleUtils.ReadInteger("Enter Quantity (Default 0): ", 0);
+        int quantity = ConsoleUtils.ReadInteger("Enter Quantity (Default 0): ", 0, true);
         Product newProduct = new(name, price, quantity);
 
         bool success = Inventory.AddProduct(newProduct);
@@ -47,6 +47,26 @@ public class UserInterface
         Console.WriteLine("--------------------------------");
     }
 
+    public static void HandleEditProduct()
+    {
+        String name = ConsoleUtils.ReadConsole("Enter the product's name: ", null);
+        Product? product = Inventory.Search(name);
+
+        if (product == null)
+        {
+            Console.WriteLine("The product not found!");
+            return;
+        }
+     
+        Console.WriteLine("Fill the fields you want to edit, and leave the fields you dont want to edit\n");
+
+        String newName = ConsoleUtils.ReadConsole("Enter new name: ", "");
+        decimal newPrice = ConsoleUtils.ReadDecimal("Enter new price: ", -1, true);
+        int newQuantity = ConsoleUtils.ReadInteger("Enter new quantity: ", -1, true);
+        
+        Inventory.EditProduct(name, newName, newPrice, newQuantity);
+    }
+    
     public static void HandleSearchProduct()
     {
         String name = ConsoleUtils.ReadConsole("Enter the product's name: ", null);

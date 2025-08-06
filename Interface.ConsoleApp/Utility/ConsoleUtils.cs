@@ -17,11 +17,11 @@ public class ConsoleUtils
         }
     }
     
-    public static int ReadInteger(String prompt, int? def)
+    public static int ReadInteger(String prompt, int? def, bool isPositive)
     {
         String input = ReadConsole(prompt, def?.ToString());
         int result;
-        while (!int.TryParse(input, out result))
+        while (!int.TryParse(input, out result) || (result != def && isPositive && result < 0))
         {
             input = ReadConsole(prompt, def?.ToString());
         }
@@ -33,7 +33,7 @@ public class ConsoleUtils
     {
         String input = ReadConsole(prompt, def?.ToString());
         decimal result;
-        while (!decimal.TryParse(input, out result) || (isPositive && result < 0))
+        while (!decimal.TryParse(input, out result) || (result != def && isPositive && result < 0))
         {
             input = ReadConsole(prompt, def?.ToString());
         }

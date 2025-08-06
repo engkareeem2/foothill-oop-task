@@ -33,6 +33,17 @@ public class Inventory
         }
     }
 
+    public static void EditProduct(String name, String newName, decimal newPrice, int newQuantity)
+    {
+        Product? product = Search(name);
+        if (product != null)
+        {
+            if (newName != "") product.Name = newName;
+            if (newPrice >= 0) product.Price = newPrice;
+            if (newQuantity >= 0) product.Quantity = newQuantity;
+        }
+    }
+
     public static Product? Search(String name)
     {
         return _products.Find(product => product.Name == name);
