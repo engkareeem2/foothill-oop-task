@@ -1,12 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.Text;
+﻿using System.Text;
 using FoothillOOPTask.Utility;
 using InventoryLibrary.Models;
 
-// Oop
-// Json
-// O O P
 StringBuilder mainMenu = new();
 
 mainMenu.Append("------------------- [ Main Menu ] -------------------\n");
