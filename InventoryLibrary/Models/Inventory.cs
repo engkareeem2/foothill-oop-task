@@ -17,4 +17,20 @@ public class Inventory
         _products.Add(product);
         return true;
     }
+
+    public static void ViewAllProducts()
+    {
+        if (_products.Count > 0)
+        {
+            foreach (Product product in _products)
+            {
+                product.Print();
+            }
+        }
+        else
+        {
+            Console.WriteLine("Empty.");
+        }
+        
+    }
 }

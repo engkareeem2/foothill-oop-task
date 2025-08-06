@@ -12,6 +12,9 @@ while (true)
         case 1:
             UserInterface.HandleAddProduct();
             break;
+        case 2:
+            UserInterface.HandleViewAllProducts();
+            break;
         default:
             Console.WriteLine("Invalid option!");
             break;

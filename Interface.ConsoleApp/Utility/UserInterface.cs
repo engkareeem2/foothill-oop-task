@@ -24,8 +24,8 @@ public class UserInterface
             name = ConsoleUtils.ReadConsole("Enter Product's Name: ", null);
         }
 
-        decimal price = ConsoleUtils.ReadDecimal("Enter price", null, true);
-        int quantity = ConsoleUtils.ReadInteger("Enter Quantity (Default 0)", 0);
+        decimal price = ConsoleUtils.ReadDecimal("Enter price: ", null, true);
+        int quantity = ConsoleUtils.ReadInteger("Enter Quantity (Default 0): ", 0);
         Product newProduct = new(name, price, quantity);
 
         bool success = Inventory.AddProduct(newProduct);
@@ -37,5 +37,13 @@ public class UserInterface
         {
             Console.WriteLine("Product not added.\nThere is something went wrong, try again later.");
         }
+    }
+
+    public static void HandleViewAllProducts()
+    {
+        Console.WriteLine("All stored products in inventory:");
+        Console.WriteLine("--------------------------------");
+        Inventory.ViewAllProducts();
+        Console.WriteLine("--------------------------------");
     }
 }

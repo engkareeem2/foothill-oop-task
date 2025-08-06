@@ -19,4 +19,9 @@ public class Product
         this.Price = price;
         this.Quantity = quantity;
     }
+
+    public void Print()
+    {
+        Console.WriteLine($"[Quantity {Quantity}] - Product {Name} with Price ${Price}");
+    }
 }
