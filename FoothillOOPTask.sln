@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoothillOOPTask", "FoothillOOPTask\FoothillOOPTask.csproj", "{12E1BF24-4A45-41A3-95E8-4E8BCA6945CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "UserInterface\UserInterface.csproj", "{12E1BF24-4A45-41A3-95E8-4E8BCA6945CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryLibrary", "InventoryLibrary\InventoryLibrary.csproj", "{E3D13459-F352-4348-AB1C-F26EB445F43D}"
 EndProject
